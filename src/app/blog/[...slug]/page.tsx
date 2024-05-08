@@ -2,6 +2,8 @@ import {posts} from '#/site/content';
 import { MDXContent } from '@/components/mdx-card';
 import {notFound} from 'next/navigation'
 
+import '@/styles/mdx.css'
+
 interface BlogPageProps {
     params: {
         slug: string[];
