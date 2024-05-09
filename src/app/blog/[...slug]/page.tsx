@@ -1,8 +1,9 @@
-import {posts} from '#/site/content';
+import {Post, posts} from '#/site/content';
 import { MDXContent } from '@/components/mdx-card';
 import {notFound} from 'next/navigation'
 
 import '@/styles/mdx.css'
+import { siteConfig } from '@/config/site';
 
 interface BlogPageProps {
     params: {
@@ -15,6 +16,20 @@ async function getPostFromParams(params: BlogPageProps['params']) {
     const post = posts.find((post) => post.slugAsParams === slug);
 
     return post
+}
+
+export async function generateMetadata({params}: BlogPageProps): Promise<Metadata> {
+    const post = await getPostFromParams(params);
+    if (!post) {
+        return {}
+    }
+    return {
+        title: post.title,
+        description: post.description,
+        authors: siteConfig.author,
+        type: "article",
+        url: post.slug
+    }   
 }
 
 export async function generateStaticParams(): Promise<BlogPageProps['params'][]> {

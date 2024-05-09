@@ -1,7 +1,16 @@
-import Image from "next/image";
+import AboutMe from "@/components/section-about-me";
+import { Metadata } from "next";
+import { siteConfig } from "@/config/site"
 
-export default function Home() {
-  return (
-    <div></div>
-  );
+export const metadata: Metadata = {
+	title: siteConfig.name,
+	description: siteConfig.description
+}
+
+export default async function HomePage() {
+	return (
+		<div className='container max-w-6xl pt-6 lg:py-10'>
+			<AboutMe />
+		</div>
+	);
 }

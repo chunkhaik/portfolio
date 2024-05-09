@@ -1,10 +1,33 @@
 import  {posts} from '#/site/content'
 import { BlogCard } from '@/components/blog-card';
+import { BlogCardPagination } from '@/components/blog-card-pagination';
 import { sortPostsByDate } from '@/lib/utils';
+import { Metadata } from 'next';
 
-export default async function Blog() {
+const POSTS_PER_PAGE = 5;
+
+export const metadata: Metadata = {
+	title: 'Blog Posts',
+	description: 'Blog posts by Me',
+}
+
+interface BlogProps {
+	searchParams: {
+		page?: string;
+	}
+}
+
+export default async function Blog({searchParams}: BlogProps) {
     
+	const currPage = Number(searchParams?.page || 1);
     const disp = sortPostsByDate(posts.filter((post) => post.published));
+
+	const totalPages = Math.ceil(disp.length / POSTS_PER_PAGE);
+	const displayPosts = disp.slice(
+		POSTS_PER_PAGE * (currPage - 1),
+		POSTS_PER_PAGE * currPage
+	)
+
     return (
 		<div className='container max-w-4xl py-6 lg:py-10'>
 			<div className='flex flex-col items-start gap-4 md:flex-row md:justify-between'>
@@ -19,7 +42,7 @@ export default async function Blog() {
 			{disp ?.length > 0 ? 
             (
 				<ul className='flex flex-col'>
-					{disp.map((post) => {
+					{displayPosts.map((post) => {
 						const { slug, date, title, description } = post;
 						return (
 							<li key={slug}>
@@ -36,6 +59,8 @@ export default async function Blog() {
 			) : (
 				<p>Nothing to see here</p>
 			)}
+
+			<BlogCardPagination className='mt-4' totalPages={totalPages} />
 		</div>
 	);
 }
