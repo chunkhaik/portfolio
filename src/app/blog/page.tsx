@@ -35,7 +35,7 @@ export default async function Blog({searchParams}: BlogProps) {
 					<h1 className='inline-block font-black text-4xl lg:text-5xl'>
 						Blog
 					</h1> 
-					<p className='text-xl text-muted-foreground'>aiubaisuda</p>
+					<p className='text-xl text-muted-foreground'>A collection of my thoughts and ideas. 💡</p>
 				</div>
 			</div>
 			<hr className='mt-8' />
