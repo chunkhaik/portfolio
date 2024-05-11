@@ -17,7 +17,7 @@ export const experience: Event[] = [
 		location: 'TikTok',
 		blurb: "TikTok is the world's leading destination for short-form mobile videos.",
 		points: [
-			'Joinig the Tiktok Live team this summer.'
+			'Joining the Tiktok Global Live team this summer.'
 		],
 		duration: 'May 2024 - Aug 2024',
 		techStack: [IconType.python, IconType.go, IconType.mysql],

@@ -23,15 +23,19 @@ export default function AboutMe() {
 					</Avatar>
 				</div>
 				<p className='text-muted-foreground text-lg py-4 text-left md:text-center'>
-					I&apos;m a technology enthusiast keen on building <span className='font-bold text-blue-700 '>high performant </span>
+					I&apos;m a technology enthusiast keen on building{' '}
+					<span className='font-bold text-slate-700 '>
+						high performant{' '}
+					</span>
 					products and solving complex engineering tasks. I
-					particularly appreciate the beauty behind<span > parallelism and concurrency</span>, with new found
+					particularly appreciate the beauty behind
+					<span> parallelism and concurrency</span>, with new found
 					interest in Deep Learning as well. <br />
 					<br />
 					When I&apos;m not coding, I&apos;m probably at the gym (I
-					try to at least) or brewing coffee. You can also catch me
-					doing street photography around Singapore, or wherever I
-					happen to be based. <br />
+					try to at least) or <a href='/coffee' className='text-blue-700 underline'>brewing coffee</a>.
+					You can also catch me doing street photography around
+					Singapore, or wherever I happen to be based. <br />
 					<br />
 					Let&apos;s connect! 🚀
 				</p>
