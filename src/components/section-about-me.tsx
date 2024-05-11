@@ -33,7 +33,7 @@ export default function AboutMe() {
 					doing street photography around Singapore, or wherever I
 					happen to be based. <br />
 					<br />
-					Let's connect! 🚀
+					Let&apos;s connect! 🚀
 				</p>
 			</div>
 			<hr />

@@ -69,7 +69,7 @@ export function Beans({
 							</h1>
 
 							<div className='font-light italic mt-2'>
-								"{coffeeBean.Comments}",{' '}
+								&quot;{coffeeBean.Comments}&quot;,{' '}
 								{coffeeBean.Rating >= 3 ? (
 									<span className='text-green-700 font-bold'>
 										{coffeeBean.Rating}/5
