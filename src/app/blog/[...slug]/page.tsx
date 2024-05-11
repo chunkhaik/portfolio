@@ -4,6 +4,7 @@ import {notFound} from 'next/navigation'
 
 import '@/styles/mdx.css'
 import { siteConfig } from '@/config/site';
+import { Metadata } from 'next';
 
 interface BlogPageProps {
     params: {
@@ -18,19 +19,19 @@ async function getPostFromParams(params: BlogPageProps['params']) {
     return post
 }
 
-export async function generateMetadata({params}: BlogPageProps): Promise<Metadata> {
-    const post = await getPostFromParams(params);
-    if (!post) {
-        return {}
-    }
-    return {
-        title: post.title,
-        description: post.description,
-        authors: siteConfig.author,
-        type: "article",
-        url: post.slug
-    }   
-}
+// export async function generateMetadata({params}: BlogPageProps): Promise<Metadata> {
+//     const post = await getPostFromParams(params);
+//     if (!post) {
+//         return {}
+//     }
+//     return {
+//         title: post.title,
+//         description: post.description,
+//         authors: siteConfig.author,
+//         type: "article",
+//         url: post.slug
+//     }   
+// }
 
 export async function generateStaticParams(): Promise<BlogPageProps['params'][]> {
     return posts.map((post) => ({

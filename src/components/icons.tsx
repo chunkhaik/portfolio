@@ -16,7 +16,6 @@ export enum IconType {
 	express = 'express',
 	django = 'django',
 	mysql = 'mysql',
-	apache = 'apache',
 	python = 'python',
 	mongodb = 'mongodb',
 }
