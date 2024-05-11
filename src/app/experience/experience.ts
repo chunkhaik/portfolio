@@ -1,6 +1,5 @@
 import { IconType } from "@/components/icons";
 import { Event } from "@/components/experience";
-import { Icon } from "lucide-react";
 
 export const experience: Event[] = [
 	// {
