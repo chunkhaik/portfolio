@@ -29,11 +29,14 @@ export function MobileNav() {
 					<span className='font-bold'>{siteConfig.name}</span>
 				</MobileLink>
 				<div className='flex flex-col gap-3 mt-3'>
+					<MobileLink onOpenChange={setOpen} href='/experience'>
+						Experience
+					</MobileLink>
+					<MobileLink onOpenChange={setOpen} href='/coffee'>
+						Coffee
+					</MobileLink>
 					<MobileLink onOpenChange={setOpen} href='/blog'>
 						Blog
-					</MobileLink>
-					<MobileLink onOpenChange={setOpen} href='/about'>
-						About
 					</MobileLink>
 					<Link
 						target='_blank'
