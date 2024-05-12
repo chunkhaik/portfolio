@@ -21,14 +21,14 @@ export function Experience({ event, eventIdx, eventCount }: EventProps) {
 		<div className='relative pb-8'>
 			{eventIdx !== eventCount ? (
 				<span
-					className='absolute top-4 hidden left-4 -ml-px h-full w-0.5 bg-gray-200 md:block'
+					className='absolute top-4 hidden left-4 -ml-px h-full w-0.5 bg-gray-200 dark:bg-slate-800 md:block'
 					aria-hidden='true'
 				/>
 			) : null}
 			<div className='relative flex space-x-3'>
 				<div className='flex min-w-0 flex-1 justify-between space-x-4'>
 					<div className='space-y-3 w-full'>
-						<div className='overflow-hidden rounded-md dark:bg-slate-900 px-6 py-4 shadow max-w-3xl'>
+						<div className='overflow-hidden rounded-md bg-slate-50 dark:bg-gray-900 dark:outline-1 dark:outline-slate-800 dark:outline px-6 py-4 shadow dark:shadow-gray-600 max-w-3xl'>
 							<h1 className='font-medium font-montserrat text-xl'>
 								{event.jobTitle},{' '}
 								<span className='font-bold text-teal-700 dark:text-amber-400'>
@@ -59,7 +59,7 @@ export function Experience({ event, eventIdx, eventCount }: EventProps) {
 										{Icons[icon]({
 											className: 'w-6 h-6',
 										})}
-										<div className='opacity-0 group-hover:opacity-100 absolute inset-x-0 top-full text-center text-xs text-black transition-opacity duration-100 ease-in-out'>
+										<div className='opacity-0 group-hover:opacity-100 absolute inset-x-0 top-full text-center text-xs transition-opacity duration-100 ease-in-out'>
 											{icon}
 										</div>
 									</div>
