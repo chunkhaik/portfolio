@@ -15,7 +15,7 @@ const IconConfig = {
 
 export function SiteHeader() {
     return (
-		<header className='z-10 sticky top-0 w-full border-b border-border backdrop-blur'>
+		<header className='z-10 sticky top-0 w-full border-b border-border dark:bg-slate-900 bg-slate-50'>
 			<div className='container flex h-14 max-w-screen-2xl items-center'>
 				<MainNav />
 				<div className='flex flex-1 items-center justify-end space-x-2'>
