@@ -12,28 +12,28 @@ export function SiteFooter() {
 						rel='noreferrer'
 						href='mailto:chunkhai.k@gmail.com'>
 						<span className='sr-only'>Mail</span>
-						<Mail className='h-6 w-6 mt-1' />
+						<Mail className='h-6 w-6' />
 					</a>
 					<a
 						target='_blank'
 						rel='noreferrer'
 						href={siteConfig.socials.github}>
 						<span className='sr-only'>GitHub</span>
-						<Icons.gitHub className='h-6 w-6' />
+						<Icons.gitHub className='w-6 h-6 dark:fill-white' />
 					</a>
 					<a
 						target='_blank'
 						rel='noreferrer'
 						href={siteConfig.socials.linkedin}>
 						<span className='sr-only'>Linkedin</span>
-						<Icons.linkedin className='h-6 w-6' />
+						<Icons.linkedin className='w-6 h-6 dark:fill-white' />
 					</a>
 					<a
 						target='_blank'
 						rel='noreferrer'
 						href={siteConfig.socials.instagram}>
 						<span className='sr-only'>Instagram</span>
-						<Icons.instagram className='h-6 w-6' />
+						<Icons.instagram className='w-6 h-6 dark:fill-white' />
 					</a>
 				</div>
 				<div className='mb-2 flex space-x-2 text-sm text-muted-foreground'>

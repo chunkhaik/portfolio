@@ -22,9 +22,9 @@ export default function AboutMe() {
 						<AvatarFallback>CK</AvatarFallback>
 					</Avatar>
 				</div>
-				<p className='text-muted-foreground text-lg py-4 text-left md:text-center'>
+				<p className='text-lg py-4 text-left md:text-center'>
 					I&apos;m a technology enthusiast keen on building{' '}
-					<span className='font-bold text-slate-700 '>
+					<span className='font-bold text-teal-600 dark:text-amber-400 '>
 						high performant{' '}
 					</span>
 					products and solving complex engineering tasks. I

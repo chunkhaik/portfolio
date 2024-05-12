@@ -1,4 +1,4 @@
-import AboutMe from "@/components/section-about-me";
+import AboutMe from "@/components/about";
 import { Metadata } from "next";
 import { siteConfig } from "@/config/site"
 

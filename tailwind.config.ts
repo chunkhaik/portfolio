@@ -79,6 +79,7 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate"), require('@tailwindcss/typography')],
+  darkMode: "class",
 } satisfies Config
 
 export default config

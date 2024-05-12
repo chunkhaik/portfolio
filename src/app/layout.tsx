@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { SiteHeader } from "@/components/header";
 import { siteConfig } from "@/config/site";
 import { SiteFooter } from "@/components/footer";
+import { Providers } from "./providers";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans"});
 
@@ -27,17 +28,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-pt-[4.0rem]">
-      <body 
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          inter.variable)}>
-        <div className="relative flex min-h-dvh flex-col bg-background">
-          <SiteHeader /> 
-          <main className="flex-1">{children}</main>
-          <SiteFooter />
-        </div>
-      </body>
-    </html>
+		<html lang='en' className='scroll-pt-[4.0rem]' suppressHydrationWarning>
+			<body
+				className={cn(
+						'min-h-screen font-sans antialiased bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-300',
+					inter.variable
+				)}>
+				<Providers>
+					<div className='relative flex min-h-dvh flex-col' >
+						<SiteHeader />
+						<main className='flex-1'>{children}</main>
+						<SiteFooter />
+					</div>
+				</Providers>
+			</body>
+		</html>
   );
 }

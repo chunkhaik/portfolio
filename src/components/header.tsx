@@ -2,17 +2,27 @@ import Link from 'next/link';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button'
-import { Icons } from '@/components/icons';
+import { Icons, GithubIcon } from '@/components/icons';
 import { MainNav } from '@/components/main-nav';
-import { MobileNav } from './mobile-nav';
+import { MobileNav } from '@/components/mobile-nav';
+import ThemeToggle from '@/components/theme-toggle';
+
+const IconConfig = {
+	lightColor: 'fill-black',
+	darkColor: 'fill-white',
+	size: 'w-6 h-6',
+}
 
 export function SiteHeader() {
     return (
-		<header className='z-10 sticky top-0 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
+		<header className='z-10 sticky top-0 w-full border-b border-border backdrop-blur'>
 			<div className='container flex h-14 max-w-screen-2xl items-center'>
 				<MainNav />
 				<div className='flex flex-1 items-center justify-end space-x-2'>
 					<nav className='flex items-center'>
+						<div className='mr-2 cursor-pointer'>
+							<ThemeToggle />
+						</div>
 						<Link
 							href={siteConfig.socials.github}
 							target='_blank'
@@ -20,9 +30,9 @@ export function SiteHeader() {
 							<div
 								className={cn(
 									buttonVariants({ variant: 'ghost' }),
-									'w-10 px-0 hidden sm:inline-flex'
+									' w-10 px-0 hidden sm:inline-flex'
 								)}>
-								<Icons.gitHub className='w-4 h-4' />
+								<Icons.gitHub className='w-6 h-6 dark:fill-white' />
 								<span className='sr-only'>GitHub</span>
 							</div>
 						</Link>
@@ -35,7 +45,7 @@ export function SiteHeader() {
 									buttonVariants({ variant: 'ghost' }),
 									'w-10 px-0 hidden sm:inline-flex'
 								)}>
-								<Icons.instagram className='w-4 h-4' />
+								<Icons.instagram className='w-6 h-6 dark:fill-white' />
 								<span className='sr-only'>Instagram</span>
 							</div>
 						</Link>
@@ -48,11 +58,11 @@ export function SiteHeader() {
 									buttonVariants({ variant: 'ghost' }),
 									'w-10 px-0 hidden sm:inline-flex'
 								)}>
-								<Icons.linkedin className='w-4 h-4' />
+								<Icons.linkedin className='w-6 h-6 dark:fill-white' />
 								<span className='sr-only'>Linkedin</span>
 							</div>
 						</Link>
-                        <MobileNav />
+						<MobileNav />
 					</nav>
 				</div>
 			</div>

@@ -28,11 +28,14 @@ export function Experience({ event, eventIdx, eventCount }: EventProps) {
 			<div className='relative flex space-x-3'>
 				<div className='flex min-w-0 flex-1 justify-between space-x-4'>
 					<div className='space-y-3 w-full'>
-						<div className='overflow-hidden rounded-md bg-white px-6 py-4 shadow max-w-3xl'>
+						<div className='overflow-hidden rounded-md dark:bg-slate-900 px-6 py-4 shadow max-w-3xl'>
 							<h1 className='font-medium font-montserrat text-xl'>
-								{event.jobTitle}, <span className='font-bold text-blue-800' >{event.location}</span>
+								{event.jobTitle},{' '}
+								<span className='font-bold text-teal-700 dark:text-amber-400'>
+									{event.location}
+								</span>
 							</h1>
-							<h1 className='text-blue-600 font-bold text-l'>
+							<h1 className='text-teal-600 dark:text-amber-400 font-bold text-l'>
 								{event.duration}
 							</h1>
 							<p className='font-inter text-base'>
@@ -50,13 +53,15 @@ export function Experience({ event, eventIdx, eventCount }: EventProps) {
 							</h1>
 							<div className='flex space-x-4 mb-4'>
 								{event.techStack.map((icon) => (
-									<div key={getKey()} className='relative group'>
+									<div
+										key={getKey()}
+										className='relative group'>
 										{Icons[icon]({
 											className: 'w-6 h-6',
 										})}
-									<div className='opacity-0 group-hover:opacity-100 absolute inset-x-0 top-full text-center text-xs text-black transition-opacity duration-100 ease-in-out'>
-										{icon}
-									</div>
+										<div className='opacity-0 group-hover:opacity-100 absolute inset-x-0 top-full text-center text-xs text-black transition-opacity duration-100 ease-in-out'>
+											{icon}
+										</div>
 									</div>
 								))}
 							</div>
