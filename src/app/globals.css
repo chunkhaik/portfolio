@@ -74,12 +74,3 @@
       @apply bg-background text-foreground;
     }
   }
-
-[data-theme='dark'] {
-  --text-color: white; 
-  --svg-fill-color: white; 
-}
-
-.svg-icon {
-  fill: var(--svg-fill-color);
-}
