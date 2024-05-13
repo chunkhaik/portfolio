@@ -1,8 +1,20 @@
-import { coffeeBeans } from './coffee-beans';
+// import { coffeeBeans } from './coffee-beans';
 import { Beans, CoffeeBean } from '@/components/coffee-beans';
 import getKey from "@/utils/keyGenerator";
+import { createClient } from '@/utils/supabase/server';
+// import { getCoffeeBeans } from '@/utils/coffee-beans';
 
-export default function Coffee() {
+export default async function Coffee() {
+
+	const supabase = createClient();
+	const coffeeBeans = await supabase.from('coffee_beans').select().then( data => {
+		let coffeeBeansList = JSON.parse(JSON.stringify(data.data));
+		coffeeBeansList = coffeeBeansList.map(
+			(coffeeBean: { coffee_bean: any }) =>
+				coffeeBean.coffee_bean
+		);
+		return coffeeBeansList
+	})
 
     return (
 		<div className='container max-w-4xl py-6 lg:py-10'>

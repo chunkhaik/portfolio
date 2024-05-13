@@ -11,25 +11,32 @@ type BrewSettings = {
     Review: string;
 };
 
+type Details = {
+	Varietal: string;
+	Origin: string;
+	Roaster: string;
+	Process: string;
+	Roast: string;
+	Altitude: string;
+};
+
+type Cafe = {
+	Name: string;
+	Price: string;
+};
+
+type Taste = {
+	Aroma: string;
+	Acidity: string;
+	Body: string;
+	'Tasting Notes': string;
+};
+
 export type CoffeeBean = {
 	'Blend Name': string;
-	Details: {
-		Varietal: string;
-		Origin: string;
-		Roaster: string;
-		Process: string;
-		Roast: string;
-	};
-	Cafe?: {
-		Name: string;
-		Price: string;
-	};
-	Taste: {
-		Aroma: string; 
-		Acidity: string;
-		Body: string;
-		'Tasting Notes': string;
-	};
+	Details: Details
+	Cafe?: Cafe;
+	Taste: Taste
 	Brew?: BrewSettings[];
 	Comments: string;
 	Rating: 0 | 1 | 2 | 3 | 4 | 5;
