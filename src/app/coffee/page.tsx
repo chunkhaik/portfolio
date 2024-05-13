@@ -26,13 +26,13 @@ export default async function Coffee() {
 					<p className='text-xl text-muted-foreground'>
 						Random assortment of all things coffee.
 					</p>
-					<p className='font-light'>
+					<p className='text-sm'>
 						Inspired to use this blog-style to keep track of my
 						coffee experiences by a good friend of mine, do check
 						out him out{' '}
 						<a
 							href='https://kelvinou.com/coffee'
-							className='text-blue-800'>
+							className='text-blue-500'>
 							here.
 						</a>
 					</p>
@@ -44,7 +44,7 @@ export default async function Coffee() {
 					Brewing Notes
 				</h2>
 				<br />
-				<div className='mb-4 font-extralight italic text-sm'>
+				<div className='mb-4 italic text-sm'>
 					<span className='text-green-600'>Green</span> for settings I
 					vary through trial-and-error,{' '}
 					<span className='text-red-600'>Red</span> for settings I
@@ -55,7 +55,7 @@ export default async function Coffee() {
 				2.0 for percolation brews and 2.4 for immersion brews on the{' '}
 				<a
 					href='https://madebyknock.com/products/aergrind'
-					className='text-blue-800'>
+					className='text-blue-500'>
 					Aergrind by Knock
 				</a>{' '}
 				as a baseline, and adjust accordingly.

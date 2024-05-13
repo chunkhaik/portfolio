@@ -24,7 +24,7 @@ export default function AboutMe() {
 				</div>
 				<p className='text-lg py-4 text-left md:text-center'>
 					I&apos;m a technology enthusiast keen on building{' '}
-					<span className='font-bold text-teal-600 dark:text-amber-400 '>
+					<span className='font-bold text-teal-600 dark:text-teal-400 '>
 						high performant{' '}
 					</span>
 					products and solving complex engineering tasks. I
@@ -33,7 +33,7 @@ export default function AboutMe() {
 					interest in Deep Learning as well. <br />
 					<br />
 					When I&apos;m not coding, I&apos;m probably at the gym (I
-					try to at least) or <a href='/coffee' className='text-blue-700 underline'>brewing coffee</a>.
+					try to at least) or <a href='/coffee' className='text-blue-500'>brewing coffee</a>.
 					You can also catch me doing street photography around
 					Singapore, or wherever I happen to be based. <br />
 					<br />

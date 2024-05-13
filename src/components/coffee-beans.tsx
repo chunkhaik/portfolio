@@ -64,7 +64,7 @@ export function Beans({
 			<div className='relative flex space-x-3'>
 				<div className='flex min-w-0 flex-1 justify-between space-x-4'>
 					<div className='space-y-3 w-full'>
-						<div className='overflow-hidden rounded-md bg-slate-50 dark:bg-gray-900 dark:outline-1 dark:outline-slate-800 dark:outline  px-6 py-4 shadow max-w-3xl'>
+						<div className='overflow-hidden rounded-md bg-slate-50 dark:bg-zinc-900 dark:outline-1 dark:outline-slate-800 dark:outline  px-6 py-4 shadow max-w-3xl'>
 							<h1 className='font-medium font-montserrat text-xl'>
 								{coffeeBean.Details.Varietal == '-' ? (
 									<div>

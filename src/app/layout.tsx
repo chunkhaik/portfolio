@@ -31,7 +31,7 @@ export default function RootLayout({
 		<html lang='en' className='scroll-pt-[4.0rem]' suppressHydrationWarning>
 			<body
 				className={cn(
-						'min-h-screen font-sans antialiased bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-300',
+						'min-h-screen font-sans antialiased bg-slate-50 dark:bg-zinc-900 text-slate-800 dark:text-slate-300',
 					inter.variable
 				)}>
 				<Providers>
