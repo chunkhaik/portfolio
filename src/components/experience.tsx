@@ -31,11 +31,11 @@ export function Experience({ event, eventIdx, eventCount }: EventProps) {
 						<div className='overflow-hidden rounded-md bg-slate-50 dark:bg-neutral-900 dark:outline-1 dark:outline-slate-800 dark:outline px-6 py-4 shadow dark:shadow-gray-600 max-w-3xl'>
 							<h1 className='font-medium font-montserrat text-xl'>
 								{event.jobTitle},{' '}
-								<span className='font-bold text-teal-700 dark:text-amber-400'>
+								<span className='font-bold text-amber-600 dark:text-amber-400'>
 									{event.location}
 								</span>
 							</h1>
-							<h1 className='text-teal-600 dark:text-amber-400 font-bold text-l'>
+							<h1 className='text-amber-600 dark:text-amber-400 font-bold text-l'>
 								{event.duration}
 							</h1>
 							<p className='font-inter text-base'>

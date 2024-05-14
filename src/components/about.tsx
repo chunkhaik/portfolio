@@ -24,7 +24,7 @@ export default function AboutMe() {
 				</div>
 				<p className='text-lg py-4 text-left md:text-center'>
 					I&apos;m a technology enthusiast keen on building{' '}
-					<span className='font-bold text-teal-600 dark:text-teal-400 '>
+					<span className='font-bold text-amber-600 dark:text-amber-400 '>
 						high performant{' '}
 					</span>
 					products and solving complex engineering tasks. I

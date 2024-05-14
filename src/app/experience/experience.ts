@@ -13,23 +13,20 @@ export const experience: Event[] = [
 	// 	],
 	// },
 	{
-		jobTitle: 'Backend Engineering Intern',
+		jobTitle: 'Backend Engineer Intern',
 		location: 'TikTok',
 		blurb: "TikTok is the world's leading destination for short-form mobile videos.",
-		points: [
-			'Joining the Tiktok Global Live team this summer.'
-		],
+		points: ['Joining the Tiktok Global Live team this summer.'],
 		duration: 'May 2024 - Aug 2024',
 		techStack: [IconType.python, IconType.go, IconType.mysql],
 	},
 	{
-		jobTitle: 'Software Engineering Intern',
+		jobTitle: 'Software Engineer Intern',
 		location: 'Scooterson',
 		blurb: 'Scooterson is a Singapore based startup which builds smart electric scooters.',
 		points: [
 			'Worked on the migration to a microservices-based Django backend, optimizing scalability and enhancing system flexibility.',
 			'Developed a globally accessible database with secure REST APIs, resulting in rapid and secure data retrieval.',
-			'Enhanced the main webpage by implementing SEO techniques, custom lazy-rendering components and enhanched image compression, resulting in a 35% faster page load time.'
 		],
 		duration: 'May 2023 - Aug 2023',
 		techStack: [
@@ -37,8 +34,20 @@ export const experience: Event[] = [
 			IconType.typescript,
 			IconType.django,
 			IconType.express,
-			IconType.mysql
+			IconType.mysql,
 		],
+	},
+	{
+		jobTitle: 'Undergraduate Teaching Assistant',
+		location: 'NUS School of Computing',
+		blurb: '',
+		points: [
+			'Taught classes for Data Structures and Algorithms and Operating Systems.',
+			'Guided students to reason about the design of algorithms, and offer feedback on system level code.',
+			'Offer assistance to academic faculty in developing course materials throughout the semester.',
+		],
+		duration: 'Aug 2022 - Present',
+		techStack: [IconType.python, IconType.java, IconType.c],
 	},
 	{
 		jobTitle: 'Backend Engineer',
@@ -55,16 +64,5 @@ export const experience: Event[] = [
 			IconType.mongodb,
 			IconType.aws,
 		],
-	},
-	{
-		jobTitle: 'Undergraduate Teaching Assistant',
-		location: 'NUS School of Computing',
-		blurb: '',
-		points: [
-			'Guided students to reason about the design of algorithms, and offer feedback on system level code.',
-			'Offer assistance to academic faculty in developing course materials throughout the semester.'
-		],
-		duration: 'Aug 2022 - Present',
-		techStack: [IconType.python, IconType.java, IconType.c],
 	},
 ];
