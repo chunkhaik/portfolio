@@ -1,6 +1,5 @@
 import getKey from '@/utils/keyGenerator';
 import { AccordionCustom } from '@/components/accordion';
-import { CoffeeBeanReview } from '@/components/coffee-beans-review';
 
 type BrewSettings = {
 	Method: string;
