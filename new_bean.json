@@ -1,0 +1,23 @@
+{
+	"Blend Name": "balblabalbalb",
+	"Comments": "Strong fruity notes, a hint of acidity but very mild",
+	"Rating": 4,
+	"Taste": {
+		"Aroma": "-",
+		"Acidity": "Low",
+		"Body": "Light and Juice-like",
+		"Tasting Notes": "Tropical Fruit, Berries"
+	},
+	"Details": {
+		"Roaster": "-",
+		"Origin": "Ethiopia Yirgacheffe Konga G1",
+		"Varietal": "Heirloom",
+		"Process": "Natural",
+		"Roast": "-",
+		"Altitude": "1900masl"
+	},
+	"Cafe": {
+		"Name": "Bean Sprout Cafe, Penang",
+		"Price": "RM15"
+	}
+}
