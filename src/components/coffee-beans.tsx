@@ -56,7 +56,7 @@ export function Beans({
 		<div className='coffee-details relative pb-8'>
 			{coffeeBeanIdx !== coffeeBeanCount ? (
 				<span
-					className='absolute top-4 hidden left-4 -ml-px h-full w-0.5 bg-gray-200 dark:bg-slate-800 md:block'
+					className='absolute top-4 hidden left-4 -ml-px h-full w-0.5 bg-slate-100 dark:bg-slate-800 md:block'
 					aria-hidden='true'
 				/>
 			) : null}
