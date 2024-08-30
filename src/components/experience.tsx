@@ -1,5 +1,6 @@
 import { Icons, IconType } from '@/components/icons'
 import getKey from '@/utils/keyGenerator';
+import ReactMarkdown from 'react-markdown';
 
 export type Event = {
     jobTitle: string;
@@ -55,7 +56,7 @@ export function Experience({ event, eventIdx, eventCount, isConcise }: EventProp
 											<li
 												key={getKey()}
 												className='mb-2 md:mb-1'>
-												{point}
+												<ReactMarkdown>{point}</ReactMarkdown>
 											</li>
 										))}
 									</ul>
