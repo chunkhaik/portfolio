@@ -6,7 +6,7 @@ export default function AboutMe() {
 		<div>
 			<div className='flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8'>
 				<div className='flex-1 space-x-4'>
-					<h1 className='inline-block font-black text-4xl lg:text-5xl'>
+					<h1 className='inline-block font-black text-3xl sm:text-4xl lg:text-5xl'>
 						About Me
 					</h1>
 				</div>
@@ -22,7 +22,7 @@ export default function AboutMe() {
 						<AvatarFallback>CK</AvatarFallback>
 					</Avatar>
 				</div>
-				<p className='text-lg py-4 text-left md:text-center'>
+				<p className='text-base sm:text-lg py-4 text-left md:text-center'>
 					I&apos;m a technology enthusiast keen on building{' '}
 					<span className='font-bold text-amber-600 dark:text-amber-400 '>
 						high performant{' '}
@@ -33,8 +33,11 @@ export default function AboutMe() {
 					interest in Deep Learning as well. <br />
 					<br />
 					When I&apos;m not coding, I&apos;m probably at the gym (I
-					try to at least) or <a href='/coffee' className='text-blue-500'>brewing coffee</a>.
-					You can also catch me doing street photography around
+					try to at least) or{' '}
+					<a href='/coffee' className='text-blue-500'>
+						brewing coffee
+					</a>
+					. You can also catch me doing street photography around
 					Singapore, or wherever I happen to be based. <br />
 					<br />
 					Let&apos;s connect! 🚀

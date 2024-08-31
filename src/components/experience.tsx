@@ -32,35 +32,34 @@ export function Experience({ event, eventIdx, eventCount, isConcise }: EventProp
 				<div className='flex min-w-0 flex-1 justify-between space-x-4'>
 					<div className='space-y-3 w-full'>
 						<div className='overflow-hidden rounded-md bg-slate-50 dark:bg-neutral-900 dark:outline-1 dark:outline-slate-800 dark:outline px-6 py-4 shadow dark:shadow-gray-600 max-w-3xl'>
-							<h1 className='font-medium font-montserrat text-xl'>
+							<h1 className='font-medium font-montserrat text-lg sm:text-xl'>
 								{event.jobTitle},{' '}
 								<span className='font-bold text-amber-600 dark:text-amber-400'>
 									{event.location}
 								</span>
 							</h1>
-							<h1 className='text-amber-600 dark:text-amber-400 font-bold text-l'>
+							<h1 className='text-amber-600 dark:text-amber-400 font-bold text-sm sm:text-md'>
 								{event.duration}
 							</h1>
 							{isConcise ? (
-								<p className='mt-4'>
+								<p className='mt-4 text-sm sm:text-base'>
 									{event.summary}
 								</p>
 							) : null}
 							{isConcise ? null : (
 								<div>
-									<p className='font-inter text-base'>
-										{event.blurb}
-									</p>
-									<ul className='list-disc pl-5 mt-4 md:mt-2'>
+									<ul className='list-disc pl-5 mt-4 md:mt-2 text-sm sm:text-base'>
 										{event.points.map((point) => (
 											<li
 												key={getKey()}
 												className='mb-2 md:mb-1'>
-												<ReactMarkdown>{point}</ReactMarkdown>
+												<ReactMarkdown>
+													{point}
+												</ReactMarkdown>
 											</li>
 										))}
 									</ul>
-									<h1 className='font-montserrat font-semibold text-xl mb-1'>
+									<h1 className='font-montserrat font-semibold text-md sm:text-xl mb-1'>
 										Tech Stack
 									</h1>
 									<div className='flex space-x-4 mb-4'>
@@ -69,7 +68,8 @@ export function Experience({ event, eventIdx, eventCount, isConcise }: EventProp
 												key={getKey()}
 												className='relative group'>
 												{Icons[icon]({
-													className: 'w-8 h-8',
+													className:
+														'w-6 h-6 sm:w-8 sm:h-8',
 												})}
 												<div className='opacity-0 group-hover:opacity-100 absolute inset-x-0 top-full text-center text-xs transition-opacity duration-100 ease-in-out'>
 													{icon}

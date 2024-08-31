@@ -14,11 +14,14 @@ type AccordionProps = {
 
 export function AccordionCustom({ title, content }: AccordionProps) {
     return (
-        <Accordion type='single' collapsible>
-            <AccordionItem value={getKey()}>
-                <AccordionTrigger>{title}</AccordionTrigger>
-                <AccordionContent>{content}</AccordionContent>
-            </AccordionItem>
-        </Accordion>
-    );
+		<Accordion
+			type='single'
+			className='text-sm sm:text-md lg:text-base'
+			collapsible>
+			<AccordionItem value={getKey()}>
+				<AccordionTrigger>{title}</AccordionTrigger>
+				<AccordionContent>{content}</AccordionContent>
+			</AccordionItem>
+		</Accordion>
+	);
 }

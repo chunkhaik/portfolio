@@ -63,7 +63,7 @@ export function Beans({
 				<div className='flex min-w-0 flex-1 justify-between space-x-4'>
 					<div className='space-y-3 w-full'>
 						<div className='overflow-hidden rounded-md bg-slate-50 dark:bg-zinc-900 dark:outline-1 dark:outline-slate-800 dark:outline  px-6 py-4 shadow max-w-3xl'>
-							<h1 className='font-medium font-montserrat text-xl'>
+							<h1 className='font-medium font-montserrat text-md sm:text-xl'>
 								{coffeeBean['Blend Name'] != '-' ? (
 									<div>
 										House Blend, {coffeeBean['Blend Name']}
@@ -73,7 +73,7 @@ export function Beans({
 								)}
 							</h1>
 
-							<div className='font-light italic mt-2'>
+							<div className='font-light italic mt-2 text-sm sm:text-md lg:text-base'>
 								{coffeeBean.Comments},{' '}
 								{coffeeBean.Rating >= 3 ? (
 									<span className='text-green-700 font-bold'>
@@ -86,7 +86,7 @@ export function Beans({
 								)}
 							</div>
 
-							<div className=''>
+							<div className='text-sm sm:text-md lg:text-base'>
 								{Object.entries(coffeeBean.Taste).map(
 									([key, value]) => {
 										if (value !== '-') {

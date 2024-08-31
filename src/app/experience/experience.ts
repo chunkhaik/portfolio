@@ -53,8 +53,8 @@ export const experience: Event[] = [
 		],
 	},
 	{
-		jobTitle: 'Undergraduate Teaching Assistant',
-		location: 'NUS School of Computing',
+		jobTitle: 'Teaching Assistant',
+		location: 'NUS',
 		duration: 'Aug 2022 - Present',
 		summary:
 			'Taught undergraduates in intermediate-level computer science courses',
