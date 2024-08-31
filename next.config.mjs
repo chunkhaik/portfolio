@@ -6,7 +6,21 @@ export default {
   webpack: config => {
     config.plugins.push(new VeliteWebpackPlugin())
     return config
-  }
+  }, 
+
+  async rewrites() {
+    return [
+      {
+        source: '/resume',
+        destination: '/ChunKhai_Resume_Sep24.pdf',
+      },
+      {
+        source: '/instagram',
+        destination: 'https://www.instagram.com/chunkhaik',
+        basePath: false,
+      },
+    ];
+  },
 }
 
 class VeliteWebpackPlugin {
@@ -22,3 +36,4 @@ class VeliteWebpackPlugin {
     })
   }
 }
+

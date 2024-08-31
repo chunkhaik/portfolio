@@ -38,7 +38,7 @@ export function MobileNav() {
 					<MobileLink onOpenChange={setOpen} href='/blog'>
 						Blog
 					</MobileLink>
-					<Link
+					{/* <Link
 						target='_blank'
 						rel='noreferrer'
 						href={siteConfig.socials.github}>
@@ -55,7 +55,7 @@ export function MobileNav() {
 						rel='noreferrer'
 						href={siteConfig.socials.instagram}>
 						Instagram
-					</Link>
+					</Link> */}
 				</div>
 			</SheetContent>
 		</Sheet>

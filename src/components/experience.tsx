@@ -69,7 +69,7 @@ export function Experience({ event, eventIdx, eventCount, isConcise }: EventProp
 												key={getKey()}
 												className='relative group'>
 												{Icons[icon]({
-													className: 'w-6 h-6',
+													className: 'w-8 h-8',
 												})}
 												<div className='opacity-0 group-hover:opacity-100 absolute inset-x-0 top-full text-center text-xs transition-opacity duration-100 ease-in-out'>
 													{icon}
