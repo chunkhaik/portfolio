@@ -40,3 +40,5 @@ next-env.d.ts
 
 # python files
 /venv
+
+bean.json

@@ -35,7 +35,7 @@ async function getCoffeeBeans () {
   return res_data.map(item => item.coffee_bean_data)
 }
 
-import bean from './new_bean.json' assert { type: "json" }
+import bean from './bean.json' assert { type: "json" }
 
 ;(async () => {
   await insertCoffeeBean(bean)

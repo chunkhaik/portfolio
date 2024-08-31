@@ -1,0 +1,23 @@
+{
+	"Blend Name": "",
+	"Comments": "",
+	"Rating": 4,
+	"Taste": {
+		"Aroma": "-",
+		"Acidity": "",
+		"Body": "",
+		"Tasting Notes": ""
+	},
+	"Details": {
+		"Roaster": "",
+		"Origin": "",
+		"Varietal": "",
+		"Process": "",
+		"Roast": "",
+		"Altitude": ""
+	},
+	"Cafe": {
+		"Name": "",
+		"Price": ""
+	}
+}

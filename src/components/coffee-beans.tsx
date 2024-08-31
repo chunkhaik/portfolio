@@ -25,7 +25,6 @@ type Cafe = {
 };
 
 type Taste = {
-	Aroma: string;
 	Acidity: string;
 	Body: string;
 	'Tasting Notes': string;
@@ -65,17 +64,17 @@ export function Beans({
 					<div className='space-y-3 w-full'>
 						<div className='overflow-hidden rounded-md bg-slate-50 dark:bg-zinc-900 dark:outline-1 dark:outline-slate-800 dark:outline  px-6 py-4 shadow max-w-3xl'>
 							<h1 className='font-medium font-montserrat text-xl'>
-								{coffeeBean.Details.Varietal == '-' ? (
+								{coffeeBean['Blend Name'] != '-' ? (
 									<div>
 										House Blend, {coffeeBean['Blend Name']}
 									</div>
 								) : (
 									coffeeBean.Details.Varietal
-								)}{' '}
+								)}
 							</h1>
 
 							<div className='font-light italic mt-2'>
-								&quot;{coffeeBean.Comments}&quot;,{' '}
+								{coffeeBean.Comments},{' '}
 								{coffeeBean.Rating >= 3 ? (
 									<span className='text-green-700 font-bold'>
 										{coffeeBean.Rating}/5
@@ -92,7 +91,7 @@ export function Beans({
 									([key, value]) => {
 										if (value !== '-') {
 											return (
-												<div key={getKey()}>
+												<div key={key}>
 													<span className='font-semibold'>
 														{key} :{' '}
 													</span>{' '}
