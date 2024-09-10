@@ -19,9 +19,13 @@ export default {
         destination: 'https://www.instagram.com/chunkhaik',
         basePath: false,
       },
+      {
+        source: '/:path*', // Match all paths
+        destination: '/', // Rewrite to the home page
+      },
     ];
   },
-}
+};
 
 class VeliteWebpackPlugin {
   static started = false
