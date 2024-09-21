@@ -10,36 +10,38 @@ export function SiteFooter() {
 					<a
 						target='_blank'
 						rel='noreferrer'
-						href='mailto:chunkhai.k@gmail.com'>
+						href='mailto:chunkhai.k@gmail.com'
+						className='fill-foreground/40 text-foreground/40 hover:text-foreground/70'>
 						<span className='sr-only'>Mail</span>
 						<Mail className='h-6 w-6' />
 					</a>
 					<a
 						target='_blank'
 						rel='noreferrer'
-						href={siteConfig.socials.github}>
+						href={siteConfig.socials.github}
+						className='fill-foreground/40 hover:fill-foreground/70'>
 						<span className='sr-only'>GitHub</span>
 						<Icons.gitHub className='w-6 h-6 dark:fill-white' />
 					</a>
 					<a
 						target='_blank'
 						rel='noreferrer'
-						href={siteConfig.socials.linkedin}>
+						href={siteConfig.socials.linkedin}
+						className='fill-foreground/40 hover:fill-foreground/70'>
 						<span className='sr-only'>Linkedin</span>
 						<Icons.linkedin className='w-6 h-6 dark:fill-white' />
 					</a>
 					<a
 						target='_blank'
 						rel='noreferrer'
-						href={siteConfig.socials.instagram}>
+						href={siteConfig.socials.instagram}
+						className='fill-foreground/40 hover:fill-foreground/70'>
 						<span className='sr-only'>Instagram</span>
 						<Icons.instagram className='w-6 h-6 dark:fill-white' />
 					</a>
 				</div>
-				<div className='mb-2 flex space-x-2 text-sm text-muted-foreground'>
-					<a href={siteConfig.url} target='_blank'>
-						{siteConfig.author} @ 2024
-					</a>
+				<div className='mb-2 flex space-x-2 text-sm text-foreground/40'>
+					2024 © {siteConfig.author}
 				</div>
 			</div>
 		</footer>

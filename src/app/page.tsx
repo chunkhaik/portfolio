@@ -10,7 +10,9 @@ export const metadata: Metadata = {
 export default async function HomePage() {
 	return (
 		<div className='container max-w-4xl py-6 lg:py-10'>
-			<AboutMe />
+			<div className='flex flex-row gap-4 justify-between'>
+				<AboutMe />
+			</div>
 		</div>
 	);
 }
