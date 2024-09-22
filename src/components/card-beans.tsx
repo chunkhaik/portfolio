@@ -12,7 +12,7 @@ type AccordionProps = {
 	content: React.ReactNode;
 };
 
-export function AccordionCustom({ title, content }: AccordionProps) {
+export function BeansCard({ title, content }: AccordionProps) {
     return (
 		<Accordion
 			type='single'

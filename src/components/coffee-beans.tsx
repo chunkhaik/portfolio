@@ -1,5 +1,5 @@
 import getKey from '@/utils/keyGenerator';
-import { AccordionCustom } from '@/components/accordion';
+import { BeansCard } from '@/components/card-beans';
 
 type BrewSettings = {
 	Method: string;
@@ -103,7 +103,7 @@ export function Beans({
 								)}
 							</div>
 
-							<AccordionCustom
+							<BeansCard
 								title='Bean Details'
 								content={
 									<div className=''>
@@ -125,7 +125,7 @@ export function Beans({
 								}
 							/>
 
-							<AccordionCustom
+							<BeansCard
 								title='Cafe Details'
 								content={
 									<div className='mt-2'>

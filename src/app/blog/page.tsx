@@ -1,5 +1,5 @@
 import  {posts} from '#/site/content'
-import { BlogCard } from '@/components/blog-card';
+import { BlogCard } from '@/components/card-blog';
 import { BlogCardPagination } from '@/components/blog-card-pagination';
 import { sortPostsByDate } from '@/lib/utils';
 import { Metadata } from 'next';
