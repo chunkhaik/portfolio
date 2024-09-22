@@ -35,7 +35,7 @@ export default function RootLayout({
 					inter.variable
 				)}>
 				<Providers>
-					<div className='relative flex min-h-dvh flex-col' >
+					<div className='relative min-h-dvh' >
 						<SiteHeader />
 						<main className='flex-1'>{children}</main>
 						<SiteFooter />

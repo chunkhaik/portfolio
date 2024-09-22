@@ -12,7 +12,7 @@ export default function HomePage() {
 		<div className='container max-w-4xl py-6 lg:py-10'>
 			<div className='flex-1 space-x-4'>
 				<h1 className='inline-block font-black text-3xl sm:text-4xl lg:text-5xl text-slate-600'>
-					Experience
+					About Me
 				</h1>
 			</div>
 			<hr className='my-8' />
