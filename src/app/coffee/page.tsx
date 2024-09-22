@@ -1,8 +1,6 @@
-// import { coffeeBeans } from './coffee-beans';
 import { Beans, CoffeeBean } from '@/components/coffee-beans';
 import getKey from "@/utils/keyGenerator";
 import { createClient } from '@/utils/supabase/server';
-// import { getCoffeeBeans } from '@/utils/coffee-beans';
 
 export default async function Coffee() {
 
@@ -20,7 +18,7 @@ export default async function Coffee() {
 		<div className='container max-w-4xl py-6 lg:py-10'>
 			<div className='flex flex-col items-start gap-4 md:flex-row md:justify-between'>
 				<div className='flex-1 space-y-3'>
-					<h1 className='inline-block font-black text-3xl sm:text-4xl lg:text-5xl'>
+					<h1 className='inline-block text-slate-600 font-black text-3xl sm:text-4xl lg:text-5xl'>
 						Coffee
 					</h1>
 					<div className='flex flex-col gap-1'>
@@ -42,7 +40,7 @@ export default async function Coffee() {
 			</div>
 			<hr className='mt-6' />
 			<div className='flex-1 my-4'>
-				<h2 className='inline-block font-black text-xl sm:text-2xl lg:text-3xl'>
+				<h2 className='inline-block text-slate-600 font-black text-xl sm:text-2xl lg:text-3xl'>
 					Brewing Notes
 				</h2>
 				<br />
@@ -107,7 +105,7 @@ export default async function Coffee() {
 			</div>
 			<hr className='mt-8' />
 			<div className='flex-1 my-4'>
-				<h2 className='inline-block font-black text-2xl sm:text-2xl lg:text-3xl'>
+				<h2 className='inline-block text-slate-600 font-black text-2xl sm:text-2xl lg:text-3xl'>
 					Coffee Beans
 				</h2>
 				<br />

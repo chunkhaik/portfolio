@@ -15,7 +15,7 @@ export default function HomePage() {
 		<div className='container max-w-4xl py-6 lg:py-10'>
 			<div className='flex flex-row gap-4 justify-between'>
 				<div className='flex-1 space-y-4'>
-					<h1 className='inline-block font-black text-3xl sm:text-4xl lg:text-5xl'>
+					<h1 className='inline-block text-slate-600 font-black text-3xl sm:text-4xl lg:text-5xl'>
 						Experience
 					</h1>
 				</div>
