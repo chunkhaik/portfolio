@@ -15,7 +15,7 @@ export function ImageGrid({
 }) {
 
 	const columns = isMainAlbum ? 4 : 2;
-	const gridClass = 'grid-cols-' + columns;
+    const gridClass = isMainAlbum ? 'grid gap-2 grid-cols-4' : 'grid gap-2 grid-cols-2';
 
 	function getColumns(colIndex: number) {
 		return images.filter((_, idx) => idx % columns === colIndex);
@@ -24,9 +24,7 @@ export function ImageGrid({
 	console.log(columns, gridClass);
 
 	return (
-		<div className={cn(
-			'grid gap-2', gridClass
-		)}>
+		<div className={gridClass}>
 			{Array.from({ length: columns }).map((_, colIndex) => (
 				<div key={colIndex} className='flex flex-col gap-2'>
 					{getColumns(colIndex).map(getImage)}
