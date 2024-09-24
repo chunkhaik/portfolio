@@ -6,15 +6,17 @@ import { ReactNode } from 'react';
 export function ImageGrid({
 	images,
 	getImage,
-	columns = 4,
+	isMainAlbum,
 }: {
 	images: SearchResult[];
 	getImage: (imageData: SearchResult) => ReactNode;
-	columns?: number;
+	isMainAlbum: boolean;
 }) {
+
 	function getColumns(colIndex: number) {
 		return images.filter((_, idx) => idx % columns === colIndex);
 	}
+	const columns = isMainAlbum ? 4 : 2;
 
 	return (
 		<div className={`grid grid-cols-${columns} gap-2`}>

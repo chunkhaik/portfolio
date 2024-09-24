@@ -4,6 +4,9 @@ import { SearchResult } from '@/components/photography-cloudinary';
 import cloudinary from 'cloudinary';
 import { eventsList } from '../photography';
 import { redirect } from 'next/navigation';
+import Link from 'next/link';
+import { ChevronLeft } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 interface PhotorgraphyPageProps {
 	params: {
@@ -37,12 +40,25 @@ export default async function Page({ params, searchParams }: PhotorgraphyPagePro
 	}
 
 	const images = await getImagesFromParams(projectDetails.cloudinaryFolder, eventTag);
+	const IS_MAIN_ALBUM = false
 
 	return (
 		<div className='container max-w-4xl py-8 lg:py-10'>
 			<div className='flex flex-col'>
-				<PhotographyIntro projectDetails={projectDetails} />
-				<GalleryGrid images={images} />
+				<div className='flex items-center justify-left gap-6 b-4 h-full mb-6'>
+					
+					<Link href='/photography'>
+						<Button
+							className='bg-transparent border-transparent'
+							variant='outline'
+							size='icon'>
+							<ChevronLeft className='h-4 w-4' />
+						</Button>
+					</Link>
+					
+					<PhotographyIntro projectDetails={projectDetails} />
+				</div>
+				<GalleryGrid images={images} isMainAlbum={IS_MAIN_ALBUM} />
 			</div>
 		</div>
 	);

@@ -13,6 +13,8 @@ export default async function GalleryPage({
 }) {
 
 	let results: SearchResult[] = [];
+	const IS_MAIN_ALBUM = true;
+
 	for (const event of eventsList) {
 		const subfolder = event.cloudinaryFolder;
 		const folderExpression = ` AND folder:portfolio-website/${subfolder}`;
@@ -39,8 +41,10 @@ export default async function GalleryPage({
 	return (
 		<div className='container max-w-4xl py-8 lg:py-10'>
 			<div className='flex flex-col'>
-				<PhotographyIntro />
-				<GalleryGrid images={results} />{' '}
+				<div className='mb-6'>
+					<PhotographyIntro />
+				</div>
+				<GalleryGrid images={results} isMainAlbum={IS_MAIN_ALBUM} />
 			</div>
 		</div>
 	);
