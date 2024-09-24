@@ -38,6 +38,9 @@ export function MobileNav() {
 					<MobileLink onOpenChange={setOpen} href='/blog'>
 						Blog
 					</MobileLink>
+					<MobileLink onOpenChange={setOpen} href='/photography'>
+						Photography
+					</MobileLink>
 					{/* <Link
 						target='_blank'
 						rel='noreferrer'
