@@ -14,14 +14,16 @@ export function ImageGrid({
 	isMainAlbum: boolean;
 }) {
 
-	const columns = isMainAlbum ? 4 : 2;
-    const gridClass = isMainAlbum ? 'grid gap-2 grid-cols-4' : 'grid gap-2 grid-cols-2';
+    const columns = isMainAlbum	
+				? window.innerWidth >= 768 ? 3 : 2
+				: window.innerWidth >= 768 ? 2 : 1;
+    const gridClass = isMainAlbum
+		? 'grid gap-2 grid-cols-2 lg:grid-cols-3'
+		: 'grid gap-2 grid-cols-1 lg:grid-cols-2';
 
 	function getColumns(colIndex: number) {
 		return images.filter((_, idx) => idx % columns === colIndex);
 	}
-
-	console.log(columns, gridClass);
 
 	return (
 		<div className={gridClass}>
