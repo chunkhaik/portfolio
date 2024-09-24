@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
-import { CoffeeBean } from '@/components/coffee-beans';
+import { CoffeeBean } from '@/components/section-coffee-beans';
 
 export async function getCoffeeBeans(){ 
 	const supabase = createClient(
