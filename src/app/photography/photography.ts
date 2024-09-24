@@ -13,7 +13,7 @@ export const eventsList: PhotographyEvent[] = [
 	{
 		eventTitle: 'Thaipusam',
 		eventDescription:
-			'A Hindu festival celebrated by the Tamil community in Singapore.',
+			'A Hindu festival celebrated by the Tamil community in Malaysia, images taken from 2017-2019.',
 		cloudinaryFolder: 'thaipusam',
 	},
 	{
