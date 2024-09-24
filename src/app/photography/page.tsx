@@ -27,6 +27,11 @@ export default async function GalleryPage({
 			.with_field('tags')
 			.max_results(40)
 			.execute()) as { resources: SearchResult[] };
+		
+			eventResults.resources.forEach((resource) => {
+				resource.album_name = event.eventTitle;
+				resource.cloudinary_folder = event.cloudinaryFolder;
+			});
 
 		results = results.concat(eventResults.resources);
 	}

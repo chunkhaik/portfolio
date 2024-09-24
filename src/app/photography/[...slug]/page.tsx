@@ -29,8 +29,9 @@ async function getImagesFromParams(folderPath: string, search?: string) {
 export default async function Page({ params, searchParams }: PhotorgraphyPageProps) {
 	const eventTitle = params.slug.join('/'); 
 	const eventTag = searchParams?.tag || '';
-	const projectDetails = eventsList.find((event) => event.eventTitle === eventTitle);
-
+	const projectDetails = eventsList.find(
+		(event) => event.eventTitle === eventTitle || event.cloudinaryFolder === eventTitle
+	);
 	if (!projectDetails) {
 		redirect('/photography');
 	}

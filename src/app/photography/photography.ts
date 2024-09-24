@@ -18,7 +18,17 @@ export const eventsList: PhotographyEvent[] = [
 	},
 	{
 		eventTitle: 'Taiwan',
-		eventDescription: 'Beauty of TW',
+		eventDescription: 'Land of 卤肉饭 and bubble teas.',
 		cloudinaryFolder: 'taiwan'
+	},
+	{
+		eventTitle: 'Birds',
+		eventDescription: '"Birds Suspended in Serene Grace, Captured in Time."', 
+		cloudinaryFolder: 'birds',
+	},
+	{
+		eventTitle: 'Unnamed',
+		eventDescription: 'Random, yet weirdly satisfying shots.',
+		cloudinaryFolder: 'misc',
 	},
 ];
