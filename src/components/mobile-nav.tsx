@@ -6,11 +6,13 @@ import { Button } from '@/components/ui/button';
 import { Menu } from 'lucide-react';
 import Link, { LinkProps } from 'next/link';
 import { useRouter } from 'next/navigation';
-import { Icons } from '@/components/icons';
+import { cn } from '@/lib/utils';
 import { siteConfig } from '@/config/site';
+import { usePathname } from 'next/navigation';
 
 export function MobileNav() {
 	const [open, setOpen] = useState(false);
+	const pathname = usePathname();
 
 	return (
 		<Sheet open={open} onOpenChange={setOpen}>
@@ -46,18 +48,6 @@ export function MobileNav() {
 						rel='noreferrer'
 						href={siteConfig.socials.github}>
 						GitHub
-					</Link>
-					<Link
-						target='_blank'
-						rel='noreferrer'
-						href={siteConfig.socials.linkedin}>
-						Linkedin
-					</Link>
-					<Link
-						target='_blank'
-						rel='noreferrer'
-						href={siteConfig.socials.instagram}>
-						Instagram
 					</Link> */}
 				</div>
 			</SheetContent>

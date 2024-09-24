@@ -26,6 +26,15 @@ export function SiteHeader() {
 							)}>
 							{siteConfig.name}
 						</span>
+						<span
+							className={cn(
+								'transition-colors hover:text-primary inline-block sm:hidden',
+								pathname === '/'
+									? 'font-bold hover:text-foreground/90 underline underline-offset-4'
+									: 'font-bold text-foreground/40'
+							)}>
+							C K .
+						</span>
 					</Link>
 					<LinkText
 						href='/experience'
