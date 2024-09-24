@@ -3,6 +3,8 @@ import { CoffeeIntro } from '@/components/coffee-introduction';
 import { BrewingNotes } from '@/components/coffee-brewing';
 import getKey from '@/utils/keyGenerator';
 import { createClient } from '@/utils/supabase/server';
+import { Suspense } from 'react';
+import Loading from '../loading';
 
 export default async function Coffee() {
 	const supabase = createClient();
@@ -26,18 +28,20 @@ export default async function Coffee() {
 					Coffee Beans
 				</h2>
 				<br />
-				<div className='mt-4'>
-					{coffeeBeans.map(
-						(beans: CoffeeBean, coffeeBeansIdx: number) => (
-							<Beans
-								key={getKey()}
-								coffeeBean={beans}
-								coffeeBeanIdx={coffeeBeansIdx}
-								coffeeBeanCount={coffeeBeans.length - 1}
-							/>
-						)
-					)}
-				</div>
+				<Suspense fallback={<Loading title='Coffee' />}>
+					<div className='mt-4'>
+						{coffeeBeans.map(
+							(beans: CoffeeBean, coffeeBeansIdx: number) => (
+								<Beans
+									key={getKey()}
+									coffeeBean={beans}
+									coffeeBeanIdx={coffeeBeansIdx}
+									coffeeBeanCount={coffeeBeans.length - 1}
+								/>
+							)
+						)}
+					</div>
+				</Suspense>
 			</div>
 		</div>
 	);

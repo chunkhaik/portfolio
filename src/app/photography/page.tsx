@@ -3,6 +3,9 @@ import { PhotographyIntro } from '@/components/photography-introduction';
 import { SearchResult } from '@/components/photography-cloudinary';
 import cloudinary from 'cloudinary';
 import { eventsList } from './photography';
+import { shuffleArray } from '@/utils/array-shuffle';
+import { Suspense } from 'react';
+import Loading from '../loading';
 
 export default async function GalleryPage({
 	searchParams: { search },
@@ -44,7 +47,12 @@ export default async function GalleryPage({
 				<div className='mb-6'>
 					<PhotographyIntro />
 				</div>
-				<GalleryGrid images={results} isMainAlbum={IS_MAIN_ALBUM} />
+				<Suspense fallback={<Loading title='Photography' />}>
+					<GalleryGrid
+						images={shuffleArray(results)}
+						isMainAlbum={IS_MAIN_ALBUM}
+					/>
+				</Suspense>
 			</div>
 		</div>
 	);
