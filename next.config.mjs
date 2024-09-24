@@ -8,6 +8,11 @@ export default {
     return config
   }, 
 
+  reactStrictMode: true,
+  images: {
+    domains: ['res.cloudinary.com'], // Allow images from Cloudinary
+  },
+
   async rewrites() {
     return [
       {
@@ -18,6 +23,10 @@ export default {
         source: '/instagram',
         destination: 'https://www.instagram.com/chunkhaik',
         basePath: false,
+      },
+          {
+        source: '/photography/:slug*',
+        destination: '/photography/:slug*',
       },
       {
         source: '/:path*', // Match all paths

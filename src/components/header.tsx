@@ -37,6 +37,11 @@ export function SiteHeader() {
 						label='Coffee'
 						currentPath={pathname}
 					/>
+					<LinkText
+						href='/photography'
+						label='Photography'
+						currentPath={pathname}
+					/>
 				</nav>
 				<div className='flex flex-1 items-center justify-end space-x-2'>
 					<nav className='flex items-center'>

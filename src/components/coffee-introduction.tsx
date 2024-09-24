@@ -1,4 +1,4 @@
-export function CoffeeIntro(){
+export function CoffeeIntro() {
 	return (
 		<div>
 			<div className='flex flex-col items-start gap-4 md:flex-row md:justify-between'>

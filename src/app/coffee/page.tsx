@@ -1,22 +1,23 @@
-import { Beans, CoffeeBean } from '@/components/section-coffee-beans';
-import { CoffeeIntro } from '@/components/section-coffee-introduction';
-import { BrewingNotes } from '@/components/section-coffee-brewing';
-import getKey from "@/utils/keyGenerator";
+import { Beans, CoffeeBean } from '@/components/coffee-beans';
+import { CoffeeIntro } from '@/components/coffee-introduction';
+import { BrewingNotes } from '@/components/coffee-brewing';
+import getKey from '@/utils/keyGenerator';
 import { createClient } from '@/utils/supabase/server';
 
 export default async function Coffee() {
-
 	const supabase = createClient();
-	const coffeeBeans = await supabase.from('coffee_beans').select().then( data => {
-		let coffeeBeansList = JSON.parse(JSON.stringify(data.data));
-		coffeeBeansList = coffeeBeansList.map(
-			(coffeeBean: { coffee_bean: any }) =>
-				coffeeBean.coffee_bean
-		);
-		return coffeeBeansList
-	})
+	const coffeeBeans = await supabase
+		.from('coffee_beans')
+		.select()
+		.then((data) => {
+			let coffeeBeansList = JSON.parse(JSON.stringify(data.data));
+			coffeeBeansList = coffeeBeansList.map(
+				(coffeeBean: { coffee_bean: any }) => coffeeBean.coffee_bean
+			);
+			return coffeeBeansList;
+		});
 
-    return (
+	return (
 		<div className='container max-w-4xl py-6 lg:py-10'>
 			<CoffeeIntro />
 			<BrewingNotes />
