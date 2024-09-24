@@ -3,7 +3,7 @@ export function CoffeeIntro() {
 		<div>
 			<div className='flex flex-col items-start gap-4 md:flex-row md:justify-between'>
 				<div className='flex-1 space-y-3'>
-					<h1 className='inline-block text-slate-600 font-black text-3xl sm:text-4xl lg:text-5xl'>
+					<h1 className='inline-block text-slate-600 dark:text-slate-300 font-black text-3xl sm:text-4xl lg:text-5xl'>
 						Coffee
 					</h1>
 					<div className='flex flex-col gap-1'>

@@ -1,7 +1,7 @@
 export function BrewingNotes(){
 	return (
 		<div className='flex-1 my-4'>
-			<h2 className='inline-block text-slate-600 font-black text-xl sm:text-2xl lg:text-3xl'>
+			<h2 className='inline-block text-slate-600 dark:text-slate-300 font-black text-xl sm:text-2xl lg:text-3xl'>
 				Brewing Notes
 			</h2>
 			<br />
