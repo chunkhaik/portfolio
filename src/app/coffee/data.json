@@ -1,0 +1,25 @@
+[
+	{
+		"Blend Name": "Forest Guava",
+		"Comments": "Most berry-juice-tasting bag of beans, one of my favourite bag so far.",
+		"Rating": 5,
+		"Taste": {
+			"Aroma": "-",
+			"Acidity": "Strong, but very rounded.",
+			"Body": "Light, like a cup of fruit tea.",
+			"Tasting Notes": "Coffee, Can Sugar, Berry/Lychee."
+		},
+		"Details": {
+			"Roaster": "REC Coffee, Japan",
+			"Origin": "Columbia",
+			"Varietal": "Red Caturra, Yellow Caturra",
+			"Process": "Anaerobic Fermentation",
+			"Roast": "Medium-light",
+			"Altitude": "1350m"
+		},
+		"Cafe": {
+			"Name": "REC Coffee, Japan",
+			"Price": "Gifted by Justin from BeanSprout, Penang"
+		}
+	}
+]
