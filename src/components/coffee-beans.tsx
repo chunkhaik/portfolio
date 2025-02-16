@@ -1,50 +1,6 @@
 import getKey from '@/utils/keyGenerator';
 import { BeansCard } from '@/components/card-beans';
-
-type BrewSettings = {
-	Method: string;
-	Ratio?: string;
-	'Brew Time': string;
-	'Grind Size': string;
-	'Water Temp': string;
-    Review: string;
-};
-
-type Details = {
-	Varietal: string;
-	Origin: string;
-	Roaster: string;
-	Process: string;
-	Roast: string;
-	Altitude: string;
-};
-
-type Cafe = {
-	Name: string;
-	Price: string;
-};
-
-type Taste = {
-	Acidity: string;
-	Body: string;
-	'Tasting Notes': string;
-};
-
-export type CoffeeBean = {
-	'Blend Name': string;
-	Details: Details
-	Cafe?: Cafe;
-	Taste: Taste
-	Brew?: BrewSettings[];
-	Comments: string;
-	Rating: 0 | 1 | 2 | 3 | 4 | 5;
-};
-
-type CoffeeBeanProps = {
-	coffeeBean: CoffeeBean;
-	coffeeBeanIdx: number;
-	coffeeBeanCount: number;
-};
+import { CoffeeBeanProps } from '@/types/coffee'
 
 export function Beans({
 	coffeeBean,
@@ -64,87 +20,83 @@ export function Beans({
 					<div className='space-y-3 w-full'>
 						<div className='overflow-hidden rounded-md bg-slate-50 dark:bg-zinc-900 dark:outline-1 dark:outline-slate-800 dark:outline  px-6 py-4 shadow max-w-3xl'>
 							<h1 className='font-medium font-montserrat text-md sm:text-xl'>
-								{coffeeBean['Blend Name'] != '-' ? (
-									<div>
-										House Blend, {coffeeBean['Blend Name']}
-									</div>
+								{coffeeBean['Blend Name'] !== '-' ? (
+									<>House Blend, {coffeeBean['Blend Name']}</>
 								) : (
 									coffeeBean.Details.Varietal
 								)}
 							</h1>
 
+							{/* Comments + Rating */}
 							<div className='font-light italic mt-2 text-sm sm:text-md lg:text-base'>
 								{coffeeBean.Comments},{' '}
-								{coffeeBean.Rating >= 3 ? (
-									<span className='text-green-700 font-bold'>
-										{coffeeBean.Rating}/5
-									</span>
-								) : (
-									<span className='text-red-700 font-bold'>
-										{coffeeBean.Rating}/5
-									</span>
-								)}
+								<span
+									className={`font-bold ${
+										coffeeBean.Rating >= 3
+											? 'text-green-700'
+											: 'text-red-700'
+									}`}>
+									{coffeeBean.Rating}/5
+								</span>
 							</div>
 
+							{/* Coffee Taste */}
 							<div className='text-sm sm:text-md lg:text-base'>
-								{Object.entries(coffeeBean.Taste).map(
-									([key, value]) => {
-										if (value !== '-') {
-											return (
-												<div key={key}>
-													<span className='font-semibold'>
-														{key} :{' '}
-													</span>{' '}
-													{value}
-												</div>
-											);
-										}
-									}
-								)}
+								{Object.entries(coffeeBean.Taste)
+									.filter(([_, details]) => details !== '-')
+									.map(([label, details]) => (
+										<div key={label}>
+											<span className='font-semibold'>
+												{label}:
+											</span>{' '}
+											{details}
+										</div>
+									))}
 							</div>
 
+							{/* Coffee Bean Details */}
 							<BeansCard
 								title='Bean Details'
 								content={
-									<div className=''>
-										{Object.entries(coffeeBean.Details).map(
-											([key, value]) => {
-												if (value !== '-') {
-													return (
-														<div key={getKey()}>
-															<span className='font-semibold'>
-																{key} :{' '}
-															</span>{' '}
-															{value}
-														</div>
-													);
-												}
-											}
-										)}
-									</div>
+									<>
+										{Object.entries(coffeeBean.Details)
+											.filter(
+												([_, details]) =>
+													details !== '-'
+											)
+											.map(([title, details]) => (
+												<div key={getKey()}>
+													<span className='font-semibold'>
+														{title}:{' '}
+													</span>
+													{details}
+												</div>
+											))}
+									</>
 								}
 							/>
 
+							{/* Cafe Details */}
 							<BeansCard
 								title='Cafe Details'
 								content={
-									<div className='mt-2'>
-										{coffeeBean.Cafe &&
-											Object.entries(coffeeBean.Cafe).map(
-												([key, value]) => {
-													if (value !== '') {
-														return (
-															<div key={getKey()}>
-																<span className='font-semibold'>
-																	{key} :{' '}
-																</span>{' '}
-																{value}
-															</div>
-														);
-													}
-												}
-											)}
-									</div>
+									coffeeBean.Cafe && (
+										<div className='mt-2'>
+											{Object.entries(coffeeBean.Cafe)
+												.filter(
+													([_, details]) =>
+														details !== ''
+												)
+												.map(([title, details]) => (
+													<div key={getKey()}>
+														<span className='font-semibold'>
+															{title}:{' '}
+														</span>
+														{details}
+													</div>
+												))}
+										</div>
+									)
 								}
 							/>
 						</div>

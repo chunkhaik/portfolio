@@ -1,6 +1,7 @@
-import { Beans, CoffeeBean } from '@/components/coffee-beans';
-import { CoffeeIntro } from '@/components/coffee-introduction';
-import { BrewingNotes } from '@/components/coffee-brewing';
+import { Beans } from '@/components/coffee-beans';
+import { CoffeeBean } from '@/types/coffee'
+import { CoffeeIntro } from './sections/introduction';
+import { BrewingNotes } from './sections/brewing';
 import getKey from '@/utils/keyGenerator';
 import { Suspense } from 'react';
 import Loading from '../loading';
