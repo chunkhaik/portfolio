@@ -19,20 +19,18 @@ export default async function Coffee() {
 					Coffee Beans
 				</h2>
 				<br />
-				<Suspense fallback={<Loading title='Coffee' />}>
-					<div className='mt-4'>
-						{coffeeBeansList.map(
-							(beans: CoffeeBean, coffeeBeansIdx: number) => (
-								<Beans
-									key={getKey()}
-									coffeeBean={beans}
-									coffeeBeanIdx={coffeeBeansIdx}
-									coffeeBeanCount={coffeeBeansList.length - 1}
-								/>
-							)
-						)}
-					</div>
-				</Suspense>
+				<div className='mt-4'>
+					{coffeeBeansList.map(
+						(beans: CoffeeBean, coffeeBeansIdx: number) => (
+							<Beans
+								key={getKey()}
+								coffeeBean={beans}
+								coffeeBeanIdx={coffeeBeansIdx}
+								coffeeBeanCount={coffeeBeansList.length - 1}
+							/>
+						)
+					)}
+				</div>
 			</div>
 		</div>
 	);
