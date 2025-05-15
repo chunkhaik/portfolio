@@ -4,7 +4,6 @@ import { CoffeeIntro } from './sections/introduction';
 import { BrewingNotes } from './sections/brewing';
 import getKey from '@/utils/keyGenerator';
 import { Suspense } from 'react';
-import Loading from '../loading';
 import coffeeBeans from './data.json' assert { type: 'json' };
 
 export default async function Coffee() {

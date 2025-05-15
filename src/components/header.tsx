@@ -33,10 +33,10 @@ export function SiteHeader() {
 									? 'font-bold hover:text-foreground/90 underline underline-offset-4'
 									: 'font-bold text-foreground/40'
 							)}>
-							C K .
+							CK
 						</span>
 					</Link>
-					<LinkText
+					{/* <LinkText
 						href='/experience'
 						label='Experience'
 						currentPath={pathname}
@@ -50,27 +50,27 @@ export function SiteHeader() {
 						href='/photography'
 						label='Photography'
 						currentPath={pathname}
-					/>
+					/> */}
 				</nav>
 				<div className='flex flex-1 items-center justify-end space-x-2'>
-					<nav className='flex items-center'>
+					<nav className='flex items-center space-x-4 lg:space-x-6'>
 						<div className='mr-2 cursor-pointer'>
 							<ThemeToggle />
 						</div>
-						<LinkButton
-							href={siteConfig.socials.github}
-							icon={Icons.gitHub}
-							label='GitHub'
+						<LinkText
+							href='/experience'
+							label='Experience'
+							currentPath={pathname}
 						/>
-						<LinkButton
-							href={siteConfig.socials.instagram}
-							icon={Icons.instagram}
-							label='Instagram'
+						<LinkText
+							href='/coffee'
+							label='Coffee'
+							currentPath={pathname}
 						/>
-						<LinkButton
-							href={siteConfig.socials.linkedin}
-							icon={Icons.linkedin}
-							label='LinkedIn'
+						<LinkText
+							href='/photography'
+							label='Photography'
+							currentPath={pathname}
 						/>
 						<MobileNav />
 					</nav>
