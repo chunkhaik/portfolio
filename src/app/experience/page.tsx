@@ -26,8 +26,8 @@ export default function ExperiencePage() {
 					</Button>
 				</div>
 			</div>
-			<hr className='mt-5 sm:mt-8' />
-			<div className='mt-4'>
+			<hr className='my-8' />
+			<div>
 				{experience.map((event: Event, eventIdx: number) => (
 					<Experience
 						key={eventIdx}

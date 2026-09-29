@@ -55,7 +55,7 @@ export default async function GalleryPage({
 	}
 
 	return (
-		<div className='container max-w-4xl py-8 lg:py-10'>
+		<div className='container max-w-4xl py-6 lg:py-10'>
 			<div className='flex flex-col'>
 				<div className='mb-6'>
 					<PhotographyIntro />

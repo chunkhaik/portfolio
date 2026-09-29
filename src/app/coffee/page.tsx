@@ -11,7 +11,7 @@ export default async function CoffeePage() {
 		<div className='container max-w-4xl py-6 lg:py-10'>
 			<CoffeeIntro />
 			<BrewingNotes />
-			<div className='flex-1 my-4'>
+			<div className='flex-1 mb-4'>
 				<h2 className='inline-block text-slate-600 dark:text-slate-300 font-black text-2xl sm:text-2xl lg:text-3xl'>
 					Coffee Beans
 				</h2>

@@ -23,7 +23,7 @@ export function CoffeeIntro() {
 					</div>
 				</div>
 			</div>
-			<hr className='mt-6' />
+			<hr className='my-8' />
 		</div>
 	);
 }

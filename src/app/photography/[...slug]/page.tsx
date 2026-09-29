@@ -48,7 +48,7 @@ export default async function Page({ params, searchParams }: PhotorgraphyPagePro
 	const IS_MAIN_ALBUM = false
 
 	return (
-		<div className='container max-w-4xl py-8 lg:py-10'>
+		<div className='container max-w-4xl py-6 lg:py-10'>
 			<div className='flex flex-col'>
 				<div className='flex items-center justify-left gap-6 b-4 h-full mb-6'>
 					
