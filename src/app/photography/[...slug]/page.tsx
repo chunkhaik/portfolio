@@ -1,5 +1,6 @@
 import GalleryGrid from '@/components/photography/grid-gallery';
 import { PhotographyIntro } from '@/components/photography/introduction';
+import { CloudinaryNotice } from '@/components/photography/cloudinary-notice';
 import { SearchResult } from '@/components/photography/cloudinary-image';
 import cloudinary from 'cloudinary';
 import { eventsList } from '../photography';
@@ -37,6 +38,10 @@ export default async function Page({ params, searchParams }: PhotorgraphyPagePro
 	);
 	if (!projectDetails) {
 		redirect('/photography');
+	}
+
+	if (!process.env.CLOUDINARY_CLOUD_NAME && !process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME) {
+		return <CloudinaryNotice projectDetails={projectDetails} />;
 	}
 
 	const images = await getImagesFromParams(projectDetails.cloudinaryFolder, eventTag);
