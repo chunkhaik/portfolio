@@ -36,21 +36,6 @@ export function SiteHeader() {
 							CK
 						</span>
 					</Link>
-					{/* <LinkText
-						href='/experience'
-						label='Experience'
-						currentPath={pathname}
-					/>
-					<LinkText
-						href='/coffee'
-						label='Coffee'
-						currentPath={pathname}
-					/>
-					<LinkText
-						href='/photography'
-						label='Photography'
-						currentPath={pathname}
-					/> */}
 				</nav>
 				<div className='flex flex-1 items-center justify-end space-x-2'>
 					<nav className='flex items-center space-x-4 lg:space-x-6'>
@@ -70,6 +55,11 @@ export function SiteHeader() {
 						<LinkText
 							href='/photography'
 							label='Photography'
+							currentPath={pathname}
+						/>
+						<LinkText
+							href='/blog'
+							label='Blog'
 							currentPath={pathname}
 						/>
 						<MobileNav />

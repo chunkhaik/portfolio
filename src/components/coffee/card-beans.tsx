@@ -1,5 +1,3 @@
-import React from 'react';
-import getKey from '@/utils/keyGenerator';
 import {
 	Accordion,
 	AccordionContent,
@@ -18,7 +16,7 @@ export function BeansCard({ title, content }: AccordionProps) {
 			type='single'
 			className='text-sm sm:text-md lg:text-base'
 			collapsible>
-			<AccordionItem value={getKey()}>
+			<AccordionItem value={title}>
 				<AccordionTrigger>{title}</AccordionTrigger>
 				<AccordionContent>{content}</AccordionContent>
 			</AccordionItem>

@@ -1,6 +1,6 @@
-import GalleryGrid from '@/components/grid-gallery';
-import { PhotographyIntro } from '@/components/photography-introduction';
-import { SearchResult } from '@/components/photography-cloudinary';
+import GalleryGrid from '@/components/photography/grid-gallery';
+import { PhotographyIntro } from '@/components/photography/introduction';
+import { SearchResult } from '@/components/photography/cloudinary-image';
 import cloudinary from 'cloudinary';
 import { eventsList } from '../photography';
 import { redirect } from 'next/navigation';

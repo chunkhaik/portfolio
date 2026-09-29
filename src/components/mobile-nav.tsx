@@ -27,7 +27,6 @@ export function MobileNav() {
 					onOpenChange={setOpen}
 					href='/'
 					className='flex items-center'>
-					{/* <Icons.logo className='mr-2 h-4 w-4' /> */}
 					<span className='font-bold'>{siteConfig.name}</span>
 				</MobileLink>
 				<div className='flex flex-col gap-3 mt-3'>
@@ -43,12 +42,6 @@ export function MobileNav() {
 					<MobileLink onOpenChange={setOpen} href='/photography'>
 						Photography
 					</MobileLink>
-					{/* <Link
-						target='_blank'
-						rel='noreferrer'
-						href={siteConfig.socials.github}>
-						GitHub
-					</Link> */}
 				</div>
 			</SheetContent>
 		</Sheet>

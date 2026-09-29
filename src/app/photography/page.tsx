@@ -1,9 +1,8 @@
-import GalleryGrid from '@/components/grid-gallery';
-import { PhotographyIntro } from '@/components/photography-introduction';
-import { SearchResult } from '@/components/photography-cloudinary';
+import GalleryGrid from '@/components/photography/grid-gallery';
+import { PhotographyIntro } from '@/components/photography/introduction';
+import { SearchResult } from '@/components/photography/cloudinary-image';
 import cloudinary from 'cloudinary';
 import { eventsList } from './photography';
-import { shuffleArray } from '@/utils/array-shuffle';
 import { Suspense } from 'react';
 import Loading from '../loading';
 
@@ -17,6 +16,15 @@ export default async function GalleryPage({
 
 	let results: SearchResult[] = [];
 	const IS_MAIN_ALBUM = true;
+
+	// ponytail: Fisher-Yates inlined, only caller; move to util if reused
+	const shuffleArray = (array: SearchResult[]): SearchResult[] => {
+		for (let i = array.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[array[i], array[j]] = [array[j], array[i]];
+		}
+		return array;
+	};
 
 	for (const event of eventsList) {
 		const subfolder = event.cloudinaryFolder;

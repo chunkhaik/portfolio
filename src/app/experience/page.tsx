@@ -1,12 +1,11 @@
 'use client'
 
-import { Event, Experience } from "@/components/experience";
+import { Event, Experience } from "@/components/experience/experience";
 import { experience } from './experience';
 import { Button } from '@/components/ui/button';
-import getKey from "@/utils/keyGenerator";
 import React, { useState } from "react";
 
-export default function HomePage() {
+export default function ExperiencePage() {
 
 	const [isConcise, setIsConcise] = useState(false);
 	const toggleExperience = () => setIsConcise(!isConcise);
@@ -31,7 +30,7 @@ export default function HomePage() {
 			<div className='mt-4'>
 				{experience.map((event: Event, eventIdx: number) => (
 					<Experience
-						key={getKey()}
+						key={eventIdx}
 						event={event}
 						eventIdx={eventIdx}
 						eventCount={experience.length - 1}

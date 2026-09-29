@@ -1,13 +1,10 @@
 import { Icons, IconType } from '@/components/icons'
-import getKey from '@/utils/keyGenerator';
-import ReactMarkdown from 'react-markdown';
 
 export type Event = {
     jobTitle: string;
     location: string;
     duration: string;
 	summary: string;
-    blurb: string;
     points: string[];
     techStack: IconType[];
 };
@@ -18,6 +15,16 @@ type EventProps = {
     eventCount: number;
 	isConcise: boolean;
 };
+
+function BoldText({ text }: { text: string }) {
+	return (
+		<>
+			{text.split(/\*\*(.+?)\*\*/g).map((part, i) =>
+				i % 2 === 1 ? <strong key={i}>{part}</strong> : part
+			)}
+		</>
+	);
+}
 
 export function Experience({ event, eventIdx, eventCount, isConcise }: EventProps) {
     return (
@@ -51,11 +58,9 @@ export function Experience({ event, eventIdx, eventCount, isConcise }: EventProp
 									<ul className='list-disc pl-5 mt-4 md:mt-2 text-sm sm:text-base'>
 										{event.points.map((point) => (
 											<li
-												key={getKey()}
+												key={point}
 												className='mb-2 md:mb-1'>
-												<ReactMarkdown>
-													{point}
-												</ReactMarkdown>
+												<BoldText text={point} />
 											</li>
 										))}
 									</ul>
@@ -65,7 +70,7 @@ export function Experience({ event, eventIdx, eventCount, isConcise }: EventProp
 									<div className='flex space-x-4 mb-4'>
 										{event.techStack.map((icon) => (
 											<div
-												key={getKey()}
+												key={icon}
 												className='relative group'>
 												{Icons[icon]({
 													className:

@@ -1,6 +1,5 @@
-import getKey from '@/utils/keyGenerator';
-import { BeansCard } from '@/components/card-beans';
-import { CoffeeBeanProps } from '@/types/coffee'
+import { BeansCard } from '@/components/coffee/card-beans';
+import { CoffeeBeanProps } from '@/components/coffee/types'
 
 export function Beans({
 	coffeeBean,
@@ -65,7 +64,7 @@ export function Beans({
 													details !== '-'
 											)
 											.map(([title, details]) => (
-												<div key={getKey()}>
+												<div key={title}>
 													<span className='font-semibold'>
 														{title}:{' '}
 													</span>
@@ -88,7 +87,7 @@ export function Beans({
 														details !== ''
 												)
 												.map(([title, details]) => (
-													<div key={getKey()}>
+													<div key={title}>
 														<span className='font-semibold'>
 															{title}:{' '}
 														</span>

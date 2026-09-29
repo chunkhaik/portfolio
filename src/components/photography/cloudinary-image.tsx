@@ -15,11 +15,10 @@ export type SearchResult = {
 export function CloudinaryImage(
 	props: {
 		imageData: SearchResult;
-		onUnheart?: (unheartedResource: SearchResult) => void;
 		isMainAlbum: boolean;
 	} & Omit<CldImageProps, 'src'>
 ) {
-	const { imageData, onUnheart, isMainAlbum, ...restProps } = props;
+	const { imageData, isMainAlbum, ...restProps } = props;
 	const albumName = imageData.album_name;
 	const albumFolder = `/photography/${imageData.cloudinary_folder}`;
 

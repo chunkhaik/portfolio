@@ -1,12 +1,10 @@
-import { Beans } from '@/components/coffee-beans';
-import { CoffeeBean } from '@/types/coffee'
+import { Beans } from '@/components/coffee/coffee-beans';
+import { CoffeeBean } from '@/components/coffee/types';
 import { CoffeeIntro } from './sections/introduction';
 import { BrewingNotes } from './sections/brewing';
-import getKey from '@/utils/keyGenerator';
-import { Suspense } from 'react';
 import coffeeBeans from './data.json' assert { type: 'json' };
 
-export default async function Coffee() {
+export default async function CoffeePage() {
 	const coffeeBeansList = coffeeBeans as CoffeeBean[];
 
 	return (
@@ -22,7 +20,7 @@ export default async function Coffee() {
 					{coffeeBeansList.map(
 						(beans: CoffeeBean, coffeeBeansIdx: number) => (
 							<Beans
-								key={getKey()}
+								key={coffeeBeansIdx}
 								coffeeBean={beans}
 								coffeeBeanIdx={coffeeBeansIdx}
 								coffeeBeanCount={coffeeBeansList.length - 1}
