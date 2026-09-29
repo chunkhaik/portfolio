@@ -4,7 +4,7 @@ import { CloudinaryNotice } from '@/components/photography/cloudinary-notice';
 import { SearchResult } from '@/components/photography/cloudinary-image';
 import cloudinary from 'cloudinary';
 import { eventsList } from '../photography';
-import { redirect } from 'next/navigation';
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -13,15 +13,18 @@ interface PhotorgraphyPageProps {
 	params: {
 		slug: string[];
 	};
-	searchParams: {
-		tag?: string;
-	};
 }
 
-async function getImagesFromParams(folderPath: string, search?: string) {
-	const expression = `resource_type:image AND folder:portfolio-website/${folderPath}${
-		search ? ` AND tags=${search}` : ''
-	}`;
+export function generateStaticParams() {
+	// one page per event, both by title and by folder slug
+	return eventsList.flatMap((event) => [
+		{ slug: [event.cloudinaryFolder] },
+		{ slug: event.eventTitle.split('/') },
+	]);
+}
+
+async function getImagesFromParams(folderPath: string) {
+	const expression = `resource_type:image AND folder:portfolio-website/${folderPath}`;
 	const response = await cloudinary.v2.search
 		.expression(expression)
 		.max_results(40)
@@ -30,21 +33,20 @@ async function getImagesFromParams(folderPath: string, search?: string) {
 	return response.resources as SearchResult[];
 }
 
-export default async function Page({ params, searchParams }: PhotorgraphyPageProps) {
-	const eventTitle = params.slug.join('/'); 
-	const eventTag = searchParams?.tag || '';
+export default async function Page({ params }: PhotorgraphyPageProps) {
+	const eventTitle = params.slug.join('/');
 	const projectDetails = eventsList.find(
 		(event) => event.eventTitle === eventTitle || event.cloudinaryFolder === eventTitle
 	);
 	if (!projectDetails) {
-		redirect('/photography');
+		notFound();
 	}
 
 	if (!process.env.CLOUDINARY_CLOUD_NAME && !process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME) {
 		return <CloudinaryNotice projectDetails={projectDetails} />;
 	}
 
-	const images = await getImagesFromParams(projectDetails.cloudinaryFolder, eventTag);
+	const images = await getImagesFromParams(projectDetails.cloudinaryFolder);
 	const IS_MAIN_ALBUM = false
 
 	return (

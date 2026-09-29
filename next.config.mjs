@@ -6,9 +6,11 @@ let veliteBuilt = false;
 
 /** @type {import('next').NextConfig} */
 export default {
+	output: 'export',
 	reactStrictMode: true,
 	images: {
-		domains: ['res.cloudinary.com'],
+		// static export can't run the image optimizer; CldImage serves Cloudinary's CDN directly
+		unoptimized: true,
 	},
 	webpack: (config) => {
 		config.plugins.push({
@@ -26,18 +28,5 @@ export default {
 			},
 		});
 		return config;
-	},
-	async rewrites() {
-		return [
-			{
-				source: '/resume',
-				destination: '/ChunKhai_Resume_Sep24.pdf',
-			},
-			{
-				source: '/instagram',
-				destination: 'https://www.instagram.com/chunkhaik',
-				basePath: false,
-			},
-		];
 	},
 };
