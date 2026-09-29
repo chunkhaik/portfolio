@@ -57,11 +57,6 @@ export function SiteHeader() {
 							label='Photography'
 							currentPath={pathname}
 						/>
-						<LinkText
-							href='/blog'
-							label='Blog'
-							currentPath={pathname}
-						/>
 						<MobileNav />
 					</nav>
 				</div>
