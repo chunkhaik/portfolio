@@ -64,7 +64,7 @@ export function Experience({ event, eventIdx, eventCount, isConcise }: EventProp
 											</li>
 										))}
 									</ul>
-									<h1 className='font-montserrat font-semibold text-md sm:text-xl mb-1'>
+									<h1 className='font-montserrat font-semibold text-md sm:text-xl mb-1 top-3'>
 										Tech Stack
 									</h1>
 									<div className='flex space-x-4 mb-4'>
