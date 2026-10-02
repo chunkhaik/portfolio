@@ -1,16 +1,19 @@
 import { build as veliteBuild } from 'velite';
 
+const isStaticExport = process.env.STATIC_EXPORT === 'true';
+
 // ponytail: next build invokes webpack() per compiler (client/server/edge);
 // velite's clean:true makes concurrent runs wipe each other, so run it once per process
 let veliteBuilt = false;
 
 /** @type {import('next').NextConfig} */
 export default {
-	output: 'export',
+	...(isStaticExport ? { output: 'export' } : {}),
 	reactStrictMode: true,
 	images: {
+		domains: ['res.cloudinary.com'],
 		// static export can't run the image optimizer; CldImage serves Cloudinary's CDN directly
-		unoptimized: true,
+		...(isStaticExport ? { unoptimized: true } : {}),
 	},
 	webpack: (config) => {
 		config.plugins.push({
@@ -28,5 +31,18 @@ export default {
 			},
 		});
 		return config;
+	},
+	async rewrites() {
+		return [
+			{
+				source: '/resume',
+				destination: '/ChunKhai_Resume_Sep24.pdf',
+			},
+			{
+				source: '/instagram',
+				destination: 'https://www.instagram.com/chunkhaik',
+				basePath: false,
+			},
+		];
 	},
 };

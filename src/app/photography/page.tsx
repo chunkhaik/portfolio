@@ -7,7 +7,14 @@ import { eventsList } from './photography';
 import { Suspense } from 'react';
 import Loading from '../loading';
 
-export default async function GalleryPage() {
+export default async function GalleryPage({
+	searchParams,
+}: {
+	searchParams?: {
+		search?: string;
+	};
+}) {
+	const search = process.env.STATIC_EXPORT === 'true' ? undefined : searchParams?.search;
 
 	if (!process.env.CLOUDINARY_CLOUD_NAME && !process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME) {
 		return <CloudinaryNotice />;
@@ -28,9 +35,13 @@ export default async function GalleryPage() {
 	for (const event of eventsList) {
 		const subfolder = event.cloudinaryFolder;
 		const folderExpression = ` AND folder:portfolio-website/${subfolder}`;
+		const tagExpression =
+			process.env.STATIC_EXPORT === 'true' || !search
+				? ''
+				: ` AND tags=${search}`;
 
 		const eventResults = (await cloudinary.v2.search
-			.expression(`resource_type:image${folderExpression}`)
+			.expression(`resource_type:image${tagExpression}${folderExpression}`)
 			.sort_by('created_at', 'desc')
 			.with_field('tags')
 			.max_results(40)
